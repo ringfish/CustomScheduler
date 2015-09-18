@@ -1,0 +1,28 @@
+<ons-page var="tim_set">
+    <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">時間割登録</div>
+    </ons-toolbar>
+
+  <ons-list modifier="inset">
+ 
+    <ons-list-item>
+      <input type="text" class="text-input text-input--transparent"id="sub_name" placeholder="科目名">
+    </ons-list-item>
+    <ons-list-item>
+      <input type="text" class="text-input text-input--transparent"id="class" placeholder="教室">
+    </ons-list-item>
+    <ons-list-item>
+      <textarea class="textarea textarea--transparent" placeholder="詳細"></textarea>
+    </ons-list-item>
+
+    
+
+  </ons-list>
+
+  <div style="padding: 10px 9px">
+    <ons-button modifier="large" style="margin: 0 auto; "onclick="timetable_read()"ng-click=" timetableNavigator.popPage('timetable.html');">
+      登録
+    </ons-button>
+  </div>
+</ons-page>

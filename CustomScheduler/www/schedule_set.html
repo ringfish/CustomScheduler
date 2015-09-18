@@ -1,0 +1,35 @@
+<ons-page>
+  <ons-toolbar>
+    <div class="left"><ons-back-button>Back</ons-back-button></div>
+    <div class="center">新規予定</div>
+  </ons-toolbar>
+    <ons-list modifier="inset">
+        <ons-list-item>
+            <input  id="title"type="text" class="text-input text-input--transparent" placeholder="予定">
+        </ons-list-item>
+        <ons-list-item><div class="scheduleInput">
+            <span class="hidari">日時</span>
+            <input class="migi" type="date" name="date" value="2015-09-11"id="date">
+        </div></ons-list-item>
+        <ons-list-item><div class="scheduleInput">
+            <span  class="hidari">開始時刻</span>
+            <input class="migi" type="time" name="time1" value="00:00"id="time1">
+        </div></ons-list-item>
+        <ons-list-item class="scheduleInput">
+            <span class="hidari">終了時刻</span>
+            <input class="migi" type="time" name="time2" value="00:00"id="time2">
+        </ons-list-item>
+        <ons-list-item>
+            <textarea id="memo" class="textarea textarea--transparent" placeholder="詳細・メモ"></textarea>
+        </ons-list-item>
+        <ons-list-item id="color" modifier="chevron" onclick="calenderNavigator.pushPage('bunnruipage.html')">分類
+        </ons-list-item>
+    </ons-list>
+    
+
+    <div style="padding: 10px 9px">
+        <ons-button modifier="large" style="margin: 0 auto;"onclick="set_strage()">
+        追加
+        </ons-button>
+    </div>
+</ons-page>

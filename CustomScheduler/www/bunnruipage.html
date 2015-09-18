@@ -1,0 +1,50 @@
+    <ons-page>
+      <ons-back-button>Back</ons-back-button>
+      <ons-list>
+
+        <ons-list-header>予定の分類</ons-list-header>
+
+        <ons-list-item modifier="tappable"onclick="school()">
+          <label class="radio-button radio-button--list-item">
+            <input id="scholl" type="radio" name="a" checked="checked">
+            <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+            <i class="fa fa-graduation-cap"></i>学校関係
+            <class="migi" type="color" name="schoolc" value="#0000ff"></label>
+            
+          </label>
+        </ons-list-item>
+
+        <ons-list-item modifier="tappable"onclick="baito()">
+          <label class="radio-button radio-button--list-item">
+            <input id="baito"type="radio" name="a">
+            <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+            <i class="fa fa-briefcase"></i>バイト
+          </label>
+        </ons-list-item>
+
+        <ons-list-item modifier="tappable"onclick="circle()">
+          <label class="radio-button radio-button--list-item">
+            <input id="circle" type="radio" name="a">
+            <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+            <i class="fa fa-users"></i>サークル・部活動関係
+          </label>
+        </ons-list-item>
+
+        <ons-list-item modifier="tappable"onclick="private()">
+          <label class="radio-button radio-button--list-item">
+            <input id="private" type="radio" name="a">
+            <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+            <i class="fa fa-home"></i>プライベート
+          </label>
+        </ons-list-item>
+
+        <ons-list-item modifier="tappable"onclick="etc()">
+          <label class="radio-button radio-button--list-item">
+            <input id="other" type="radio" name="a">
+            <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+            <i class="fa fa-star"></i>その他
+          </label>
+        </ons-list-item>
+      </ons-list>
+
+    </ons-page>

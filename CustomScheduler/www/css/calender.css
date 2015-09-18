@@ -1,0 +1,28 @@
+/* This is a CSS file */
+.hiduke{
+    left: 0px;
+}
+#hako{
+    position: absolute;
+    table-layout: fixed;
+    width: 100%;
+    height: 100%;
+}
+.cell{
+    text-align: left;
+    vertical-align: top;
+    font-size: 12px;
+}
+
+.hidari{
+    float: left;
+}
+
+.migi{
+    float: right;
+}
+
+.scheduleInput{
+    text-align: center;
+    vertical-align: middle;
+}

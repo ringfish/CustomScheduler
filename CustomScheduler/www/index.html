@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="components/loader.js"></script>
+    <script src="nakazawa.js"></script>
+    <script src="kudou.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/calender.css">
+    <link rel="stylesheet" href="css/timetable.css">
+    <script>
+        ons.bootstrap();
+        ons.ready(function(){
+            ons.createDialog('popup.html').then(function(dialog) {
+                dialog.on('posthide', function(){
+                    out();
+                });
+            });
+            
+            tabbar.on('postchange', function(event){
+                //console.log(event.index);
+                 if(event.index==2){
+                            min_cal();
+                        }
+                else if (event.index == 0){  
+                    calenderNavigator.on('postpop', function(e){
+                        if(e.leavePage.page == "schedule_set.html"){
+                            fixSchedule();
+                        }
+                    });
+                    calenderNavigator.on('postpush', function(e){
+                        //alert("push");
+                        if(e.enterPage.page == "page1.html"){
+                            fixSchedule();
+                        }
+                        else if(e.enterPage.page=="schedule_detail.html"){
+                            print_detail();
+                        }
+                        else if(e.enterPage.page=="detail2.html"){
+                            printDetail2();
+                        }
+                    });
+                }
+                
+                if(event.index == 3){
+                    tab_fix();
+                }
+                
+                else if(event.index==1){
+                    timetableNavigator.on('postpop', function(e){
+                        output("test");
+                    });
+                    timetableNavigator.on('postpush', function(e){
+                        timetable_fix();
+                    });
+                }
+            });
+            
+            calenderNavigator.on('postpush', function(e){
+                //alert("push");
+                if(e.enterPage.page == "page1.html"){
+                    fixSchedule();
+                }
+                else if(e.enterPage.page=="schedule_detail.html"){
+                    print_detail();
+                }
+                else if(e.enterPage.page=="detail2.html"){
+                    printDetail2();
+                }
+            });
+           
+            calenderNavigator.on('postpop', function(e){
+                if(e.leavePage.page == "schedule_set.html"){
+                    fixSchedule();
+                }
+            });
+            
+        });
+    </script>
+</head>
+
+<body>
+    <ons-template id="calenderNavigator.html">
+        <ons-navigator var="calenderNavigator" page="page1.html">
+        </ons-navigator>
+    </ons-template>
+    <ons-template id="timetableNavigator.html">
+        <ons-navigator var="timetableNavigator" page="timetable.html">
+        </ons-navigator>
+    </ons-template>
+    <ons-tabbar var="tabbar">
+        <ons-tabbar-item
+            icon="fa-calendar"
+            label="CALENDER"
+            page="calenderNavigator.html"
+            active="true"></ons-tabbar-item>
+        <ons-tabbar-item
+            icon="fa-pencil-square"
+            label="時間割"
+            page="timetableNavigator.html"></ons-tabbar-item>
+        <ons-tabbar-item
+            icon=" fa-child"
+            label="シフト管理"
+            page="page3.html">
+        </ons-tabbar-item>
+        <ons-tabbar-item
+            icon="fa-rss"
+            label="browser"
+            var browser=window.open('https://aoyama-portal.aoyama.ac.jp/aogaku_auth/jsp/AUTH01.jsp?TYPE=33554433&REALMOID=06-2a27689c-587a-42e0-834c-7a6751c24219&GUID=&SMAUTHREASON=0&METHOD=GET&SMAGENTNAME=-SM-r89u6khXRk7JOFlBFandmhS%2bQY8%2bY7iTcu2GscifxGrBSpg9InRY%2fYOUXwnZU1s7&TARGET=-SM-https%3a%2f%2faoyama--portal.aoyama.ac.jp%2fprotect%2f', '_blank', 'location=yes'); 
+            page="browser.html"></ons-tabbar-item>    
+    </ons-tabbar>
+</body>
+</html>
+
